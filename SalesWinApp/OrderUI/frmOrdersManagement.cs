@@ -26,7 +26,6 @@ namespace SalesWinApp.OrderUI
         public IMemberRepository MemberRepository { get; set; }
         private IOrderRepository orderRepository = new OrderRepository();
         private IEnumerable<OrderPresenter> orderPresenters = new List<OrderPresenter>();
-        //private IEnumerable<AdminOrderPresenter> adminOrderPresenters = new List<AdminOrderPresenter>();
 
         BindingSource source;
         private IMapper mapper;
@@ -45,35 +44,7 @@ namespace SalesWinApp.OrderUI
             this.Controls.Add(mainMenu);
             this.MainMenuStrip = mainMenu;
 
-            if (LoginMember.Fullname.Equals("Admin"))
-            {
-                ToolStripMenuItem menuManagement = new ToolStripMenuItem("&Management");
-                ToolStripMenuItem menuMemberMng = new ToolStripMenuItem("&Member Management");
-                ToolStripMenuItem menuProductMng = new ToolStripMenuItem("&Product Management");
-                ToolStripMenuItem menuExit = new ToolStripMenuItem("&Exit");
-
-                // Main Menu
-                mainMenu.Items.AddRange(new ToolStripItem[]
-                {
-                menuManagement,
-                menuExit
-                });
-
-                // Menu Management
-                menuManagement.DropDownItems.AddRange(new ToolStripItem[]
-                {
-                menuMemberMng,
-                menuProductMng
-                });
-
-                menuMemberMng.ShortcutKeys = (Keys)((Keys.Control) | Keys.M);
-                menuProductMng.ShortcutKeys = (Keys)((Keys.Control) | Keys.O);
-
-                menuMemberMng.Click += new EventHandler(menuMemberMng_Click);
-                menuProductMng.Click += new EventHandler(menuProductMng_Click);
-                menuExit.Click += new EventHandler(menuExit_Click);
-            }
-            else
+            if (!LoginMember.Fullname.Equals("Admin"))
             {
                 ToolStripMenuItem menuOrder = new ToolStripMenuItem("&Order Product");
                 ToolStripMenuItem menuProfile = new ToolStripMenuItem("My &Profile");
@@ -253,31 +224,6 @@ namespace SalesWinApp.OrderUI
             {
                 MessageBox.Show(ex.Message, "Search Orders", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private DataTable CreateDataTable<T>()
-        {
-            DataTable dt = new DataTable();
-
-            PropertyInfo[] piT = typeof(T).GetProperties();
-
-            foreach (PropertyInfo pi in piT)
-            {
-                Type propertyType = null;
-                if (pi.PropertyType.IsGenericType)
-                {
-                    propertyType = pi.PropertyType.GetGenericArguments()[0];
-                }
-                else
-                {
-                    propertyType = pi.PropertyType;
-                }
-                DataColumn dc = new DataColumn(pi.Name, propertyType);
-                if (pi.CanRead)
-                {
-                    dt.Columns.Add(dc);
-                }
-            }
-            return dt;
         }
 
     }

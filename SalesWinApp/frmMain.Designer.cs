@@ -1,4 +1,6 @@
-﻿
+﻿using System.Drawing;
+using System.Windows.Forms;
+
 namespace SalesWinApp
 {
     partial class frmMain
@@ -29,60 +31,77 @@ namespace SalesWinApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnMemberManagement = new System.Windows.Forms.Button();
-            this.btnProductManagement = new System.Windows.Forms.Button();
-            this.btnOrderManagement = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            menuStrip1 = new MenuStrip();
+            membersToolStripMenuItem = new ToolStripMenuItem();
+            productsToolStripMenuItem = new ToolStripMenuItem();
+            ordersToolStripMenuItem = new ToolStripMenuItem();
+            statusStrip1 = new StatusStrip();
+            menuStrip1.SuspendLayout();
+            SuspendLayout();
             // 
-            // btnMemberManagement
+            // menuStrip1
             // 
-            this.btnMemberManagement.Location = new System.Drawing.Point(42, 34);
-            this.btnMemberManagement.Name = "btnMemberManagement";
-            this.btnMemberManagement.Size = new System.Drawing.Size(126, 53);
-            this.btnMemberManagement.TabIndex = 1;
-            this.btnMemberManagement.Text = "&Member Management";
-            this.btnMemberManagement.UseVisualStyleBackColor = true;
-            this.btnMemberManagement.Click += new System.EventHandler(this.btnMemberManagement_Click);
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { membersToolStripMenuItem, productsToolStripMenuItem, ordersToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
             // 
-            // btnProductManagement
+            // membersToolStripMenuItem
             // 
-            this.btnProductManagement.Location = new System.Drawing.Point(204, 34);
-            this.btnProductManagement.Name = "btnProductManagement";
-            this.btnProductManagement.Size = new System.Drawing.Size(126, 53);
-            this.btnProductManagement.TabIndex = 2;
-            this.btnProductManagement.Text = "&Product Management";
-            this.btnProductManagement.UseVisualStyleBackColor = true;
-            this.btnProductManagement.Click += new System.EventHandler(this.btnProductManagement_Click);
+            membersToolStripMenuItem.Name = "membersToolStripMenuItem";
+            membersToolStripMenuItem.Size = new Size(85, 24);
+            membersToolStripMenuItem.Text = "Members";
+            membersToolStripMenuItem.Click += membersToolStripMenuItem_Click;
             // 
-            // btnOrderManagement
+            // productsToolStripMenuItem
             // 
-            this.btnOrderManagement.Location = new System.Drawing.Point(361, 34);
-            this.btnOrderManagement.Name = "btnOrderManagement";
-            this.btnOrderManagement.Size = new System.Drawing.Size(126, 53);
-            this.btnOrderManagement.TabIndex = 3;
-            this.btnOrderManagement.Text = "&Order Management";
-            this.btnOrderManagement.UseVisualStyleBackColor = true;
-            this.btnOrderManagement.Click += new System.EventHandler(this.btnOrderManagement_Click);
+            productsToolStripMenuItem.Name = "productsToolStripMenuItem";
+            productsToolStripMenuItem.Size = new Size(80, 24);
+            productsToolStripMenuItem.Text = "Products";
+            productsToolStripMenuItem.Click += productsToolStripMenuItem_Click;
+            // 
+            // ordersToolStripMenuItem
+            // 
+            ordersToolStripMenuItem.Name = "ordersToolStripMenuItem";
+            ordersToolStripMenuItem.Size = new Size(67, 24);
+            ordersToolStripMenuItem.Text = "Orders";
+            ordersToolStripMenuItem.Click += ordersToolStripMenuItem_Click;
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.ImageScalingSize = new Size(20, 20);
+            statusStrip1.Location = new Point(0, 428);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(800, 22);
+            statusStrip1.TabIndex = 1;
+            statusStrip1.Text = "statusStrip1";
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 118);
-            this.Controls.Add(this.btnOrderManagement);
-            this.Controls.Add(this.btnProductManagement);
-            this.Controls.Add(this.btnMemberManagement);
-            this.Name = "frmMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FStore Management";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(statusStrip1);
+            Controls.Add(menuStrip1);
+            IsMdiContainer = true;
+            MainMenuStrip = menuStrip1;
+            Name = "frmMain";
+            Text = "frmMain";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnMemberManagement;
-        private System.Windows.Forms.Button btnProductManagement;
-        private System.Windows.Forms.Button btnOrderManagement;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem membersToolStripMenuItem;
+        private ToolStripMenuItem productsToolStripMenuItem;
+        private ToolStripMenuItem ordersToolStripMenuItem;
+        private StatusStrip statusStrip1;
     }
 }

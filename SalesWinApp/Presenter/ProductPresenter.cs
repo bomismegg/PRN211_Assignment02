@@ -13,11 +13,11 @@ namespace SalesWinApp.Presenter
         [DisplayName("Product ID")]
         public int ProductId { get; set; }
 
+        [DisplayName("CategoryId")]
+        public string CategoryId { get; set; }
+
         [DisplayName("Product Name")]
         public string ProductName { get; set; }
-
-        [DisplayName("Category")]
-        public string CategoryName { get; set; }
         
         [DisplayName("Weight")]
         public string Weight { get; set; }
@@ -27,5 +27,6 @@ namespace SalesWinApp.Presenter
 
         [DisplayName("Units In Stock")]
         public int UnitsInStock { get; set; }
+
     }
 }

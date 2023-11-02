@@ -60,7 +60,7 @@ namespace SalesWinApp.ProductUI
                         numUnitPrice.Value = ProductInfo.UnitPrice;
                         numUnitsInStock.Value = ProductInfo.UnitsInStock;
                         cboCategory_LoadDataSource();
-                        cboCategory.SelectedIndex = cboCategory.FindStringExact(ProductInfo.CategoryName);
+                        cboCategory.SelectedIndex = cboCategory.FindStringExact(ProductInfo.CategoryId);
 
                     }
                 }
@@ -78,7 +78,7 @@ namespace SalesWinApp.ProductUI
                     txtProductId.Text = ProductInfo.ProductId.ToString();
                     txtProductName.Text = ProductInfo.ProductName;
                     cboCategory_LoadDataSource();
-                    cboCategory.SelectedIndex = cboCategory.FindStringExact(ProductInfo.CategoryName);
+                    cboCategory.SelectedIndex = cboCategory.FindStringExact(ProductInfo.CategoryId);
                     txtWeight.Text = ProductInfo.Weight;
                     numUnitPrice.Value = ProductInfo.UnitPrice;
 
@@ -107,7 +107,7 @@ namespace SalesWinApp.ProductUI
                         {
                             //ProductId = int.Parse(txtProductId.Text),
                             ProductName = txtProductName.Text,
-                            CategoryName = cboCategory.Text,
+                            CategoryId = cboCategory.Text,
                             Weight = txtWeight.Text,
                             UnitPrice = numUnitPrice.Value,
                             UnitsInStock = Convert.ToInt32(numUnitsInStock.Value)
@@ -122,7 +122,7 @@ namespace SalesWinApp.ProductUI
                         {
                             ProductId = int.Parse(txtProductId.Text),
                             ProductName = txtProductName.Text,
-                            CategoryName = cboCategory.Text,
+                            CategoryId = cboCategory.Text,
                             Weight = txtWeight.Text,
                             UnitPrice = numUnitPrice.Value,
                             UnitsInStock = Convert.ToInt32(numUnitsInStock.Value)

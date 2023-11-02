@@ -51,39 +51,6 @@ namespace SalesWinApp.MemberUI
             mapper = config.CreateMapper();
         }
 
-        private void CreateMainMenu()
-        {
-            MenuStrip mainMenu = new MenuStrip();
-            this.Controls.Add(mainMenu);
-            this.MainMenuStrip = mainMenu;
-
-            ToolStripMenuItem menuManagement = new ToolStripMenuItem("&Management");
-            ToolStripMenuItem menuProductMng = new ToolStripMenuItem("&Product Management");
-            ToolStripMenuItem menuOrderMng = new ToolStripMenuItem("&Order Management");
-            ToolStripMenuItem menuExit = new ToolStripMenuItem("&Exit");
-
-            // Main Menu
-            mainMenu.Items.AddRange(new ToolStripItem[]
-            {
-                menuManagement,
-                menuExit
-            });
-
-            // Menu Management
-            menuManagement.DropDownItems.AddRange(new ToolStripItem[]
-            {
-                menuProductMng,
-                menuOrderMng
-            });
-
-            menuProductMng.ShortcutKeys = (Keys)((Keys.Control) | Keys.P);
-            menuOrderMng.ShortcutKeys = (Keys)((Keys.Control) | Keys.O);
-
-            menuProductMng.Click += new EventHandler(menuProductMng_Click);
-            menuOrderMng.Click += new EventHandler(menuOrderMng_Click);
-            menuExit.Click += new EventHandler(menuExit_Click);
-        }
-
         private void frmMemberManagement_Load(object sender, EventArgs e)
         {
             btnDelete.Enabled = false;
@@ -98,7 +65,6 @@ namespace SalesWinApp.MemberUI
             dgvMemberList.Enabled = false;
             grSearch.Enabled = false;
             grFilter.Enabled = false;
-            CreateMainMenu();
 
 
             btnNew.Enabled = true;

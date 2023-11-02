@@ -48,18 +48,6 @@ namespace SalesWinApp
                     string memberName = loginMember.FullName;
                     if (memberName.Equals("Admin"))
                     {
-                        //frmMembersManagement frmMemberManagement = null;
-                        //frmMemberManagement = new frmMembersManagement
-                        //{
-                        //    LoginMember = memberPresenter,
-                        //};
-                        //frmMemberManagement.Closed += (s, args) => this.Close();
-                        //this.Hide();
-                        //frmMemberManagement.Show();
-                        //frmProductsManagement frmProductsManagement = new frmProductsManagement();
-                        //frmProductsManagement.Closed += (s, args) => this.Close();
-                        //this.Hide();
-                        //frmProductsManagement.Show();
                         frmMain frmMain = null;
                         frmMain = new frmMain
                         {
@@ -72,16 +60,6 @@ namespace SalesWinApp
                     }
                     else
                     {
-                        //frmMemberDetails frmMemberDetails = new frmMemberDetails
-                        //{
-                        //    Text = "Member Details",
-                        //    MemberInfo = memberPresenter,
-                        //    InsertOrUpdate = false,
-                        //    MemberRepository = memberRepository
-                        //};
-                        //frmMemberDetails.Closed += (s, args) => this.Close();
-                        //this.Hide();
-                        //frmMemberDetails.Show();
                         frmProductsManagement frmProductsManagement = new frmProductsManagement()
                         {
                             LoginMember = memberPresenter,
